@@ -13,9 +13,10 @@ define('VIEWS_PATH', $root . 'views' . DIRECTORY_SEPARATOR);
 require APP_PATH . "App.php" ;
 
 $files = getTransactionFiles(FILES_PATH);
+var_dump($files);
 $transactions=[];
 foreach ($files as $file){
-    $transactions = array_merge($transactions, getTransactionFiles($file));
+    $transactions = array_merge($transactions, getTransaction($file));
 }
 print_r($transactions);
 //var_dump($files);
