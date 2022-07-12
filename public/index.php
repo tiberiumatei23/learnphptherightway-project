@@ -10,13 +10,19 @@ define('VIEWS_PATH', $root . 'views' . DIRECTORY_SEPARATOR);
 
 /* YOUR CODE (Instructions in README.md) */
 
-require APP_PATH . "App.php" ;
+require APP_PATH . "App.php";
+//require FILES_PATH . "sample_1.csv";
 
 $files = getTransactionFiles(FILES_PATH);
-var_dump($files);
+//var_dump($files);
+
+
+
+
 $transactions=[];
 foreach ($files as $file){
-    $transactions = array_merge($transactions, getTransaction($file));
+    $transactions = array_merge($transactions, getTransaction($file,'extractTransaction'));
 }
-print_r($transactions);
+//print_r($transactions);
 //var_dump($files);
+require VIEWS_PATH . 'transactions.php';
